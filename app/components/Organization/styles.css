@@ -1,16 +1,144 @@
+/* layout */
+
 .container {
-  max-width: 1500px;
-  padding: 40px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 40px 40px 0;
 }
 
-.name {
-  margin: 10px 0 15px;
-  line-height: 50px;
-  font-size: 40px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #DDDDDD;
+.columns {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
+
+.main {
+  padding-top: 10px;
+  width: 70%;
+}
+
+.aside {
+  padding: 25px;
+  width: 430px;
+  background: #FAFAFA;
+  border: 1px solid #DADADA;
+  border-top: 0;
+}
+
+/* header */
+
+.category {
+  color: #666666;
+}
+
+.header {
+  margin-bottom: 0;
+  padding: 0 5px 10px;
+  border-bottom: 1px solid #DADADA;
+  line-height: 1.4em;
+}
+
+/* left column */
+
+.purpose {
+  padding-right: 30px;
+}
+
+/* right column */
+
+.block {
+  margin: 20px 0 0;
+  padding: 10px;
+
+  border-top: 1px solid #DADADA;
+}
+
+.block h3 {
+  margin: 5px 0 10px;
+}
+
+.block p {
+  margin: 0;
+}
+
+.block a {
+  color: #0366d6;
+}
+
+.block a:hover {
+  text-decoration: underline;
+}
+
+.edit {
+  text-align: right;
+}
+
+.edit a {
+  display: inline-block;
+
+  width: 140px;
+  height: 40px;
+  line-height: 40px;
+
+  text-align: center;
+
+  background: #2196F3;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.edit a:hover {
+  background: #1976D2;
+}
+
+.active,
+.inactive {
+  font-weight: bold;
+}
+
+.active {
+  color: #2E7D32;
+}
+
+.inactive {
+  color: #B71C1C;
+}
+
+.person {
+  display: block;
+  padding-top: 10px;
+}
+
+.position {
+  display: block;
+
+  font-size: 12pt;
+}
+
+
+
+
+/*
+.editLink {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+
+  width: 135px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+
+  background: #2196F3;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.editLink:hover {
+  background: #1976D2;
+}
+
 
 .loading {
   font-size: 28px;
@@ -23,10 +151,4 @@
   text-align: center;
 }
 
-.contact a {
-  color: #0366d6;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
+*/

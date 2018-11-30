@@ -1,43 +1,46 @@
-const BASE = 'https://cors-anywhere.herokuapp.com/http://155.158.2.79:8080/api/'
-const headers = {
-  mode: 'cors'
+import queryString from 'query-string'
+import { transformOrganization, transformProposal } from './transforms'
+
+const BASE_URL = 'https://bazango.herokuapp.com/api/'
+
+const config = {
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json; charset=utf-8'
+  }
 }
 
-const getAttrs = (obj) => Object.entries(obj).map(([key, val]) => `${key}=${val}`).join('&')
+const get = (path) =>
+  fetch(BASE_URL + path, { method: 'GET', ...config })
+    .then(response => response.json())
 
-const getOrganizations = (search, page, tags, categories) => {
-  let attrs = getAttrs({
-    search: search ? search : '',
-    page: page ? page : 1,
-    tags__name__in: tags.filter(({active}) => active).map(({slug}) => slug).join(','),
-    categories__name__in: categories.filter(({active}) => active).map(({name}) => name).join(',')
+const post = (path, data) =>
+  fetch(BASE_URL + path, { method: 'POST', body: JSON.stringify(data), ...config })
+    .then(response => response.json())
+
+const getOrganizations = (page, {category, activeTags, search}) => {
+  let query = queryString.stringify({
+    search,
+    page,
+    'tags__name__in': activeTags.join(','),
+    'categories__name__in': category
   })
-  return fetch(`${BASE}organization/?${attrs}`, { method: 'GET', ...headers }).then(
-    (response) => response.json()
-  )
+  return get('organization/?' + query)
 }
 
-const getOrganization = (id) => {
-  return fetch(`${BASE}organization/${id}/`, { method: 'GET', ...headers }).then(
-    (response) => response.json()
-  )
-}
+const getOrganization = (id) =>
+  get(`organization/${id}/`).then(transformOrganization)
 
-const getTags = () => {
-  return fetch(`${BASE}tag/`, { method: 'GET', ...headers }).then(
-    (response) => response.json()
-  )
-}
+const getTags = () => get('tag/')
 
-const getCategories = () => {
-  return fetch(`${BASE}category/`, { method: 'GET', ...headers }).then(
-    (response) => response.json()
-  )
-}
+const getCategories = () => get('category/')
+
+const postProposal = (data) => post('organization-proposal/', transformProposal(data))
 
 export {
   getOrganizations,
   getOrganization,
   getTags,
-  getCategories
+  getCategories,
+  postProposal
 }

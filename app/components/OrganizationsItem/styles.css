@@ -1,0 +1,23 @@
+.container {
+  padding: 0px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.link {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.link:hover {
+  background: #FAFAFA;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.tags {
+  margin: 4px 0 0;
+}

@@ -5,41 +5,13 @@
 body {
   margin: 0;
   padding: 0;
+  line-height: 1.5em;
+
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
-  line-height: 1.5em;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
-}
-
-.inactive {
-  display: inline-block;
-  width: 95px;
-  height: 23px;
-  margin: 0;
-  padding: 4px 0;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: uppercase;
-  background-color: #B71C1C;
-  font-weight: 600;
-  border-radius: 6px;
-  color: #FFFFFF;
-  transform: translate(0, -10px);
-}
-
-.inactive::before, .inactive::after {
-  content: '\00a0\00a0';
-}
-
-.inactiveHeader {
-  composes: inactive;
-  transform: translate(0, -20px);
-  width: 123px;
-  height: 28px;
-  font-size: 16px;
-  line-height: 21px;
+  text-decoration: none;
 }

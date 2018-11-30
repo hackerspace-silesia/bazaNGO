@@ -1,18 +1,16 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { header } from './styles.css'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Header, Footer } from '../'
 
-class Home extends Component {
-  render () {
-    return (
-      <div>
-        <div className={header}>
-          <h1><Link to="/">Baza Organizacji Pozarządowych COP</Link></h1>
-        </div>
-        {this.props.children}
-      </div>
-    )
-  }
+const Main = ({children}) =>
+  <div>
+    <Header />
+    {children}
+    <Footer />
+  </div>
+
+Main.propTypes = {
+  children: PropTypes.node.isRequired
 }
 
-export default Home
+export default Main

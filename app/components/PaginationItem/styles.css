@@ -1,0 +1,31 @@
+.paginationItem {
+  display: inline-block;
+  height: 30px;
+  min-width: 32px;
+
+  margin: 5px;
+  padding: 0 5px;
+  line-height: 32px;
+
+  background: #BA68C8;
+  color: #FFFFFF;
+
+  font-family: sans-serif;
+  font-weight: 300;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.paginationItem:hover {
+  background: #AB47BC;
+}
+
+.active {
+  background: #DDDDDD;
+  color: #616161;
+}
+
+.active:hover {
+  background: #CCCCCC;
+}

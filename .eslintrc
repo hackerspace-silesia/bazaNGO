@@ -7,7 +7,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "standard"
+    "standard",
+    "plugin:jsx-control-statements/recommended"
   ],
   "parserOptions": {
     "ecmaversion": 6,
@@ -19,8 +20,14 @@
   },
   "plugins": [
     "react",
-    "promise"
+    "promise",
+    "jsx-control-statements"
   ],
+  "settings": {
+    "react": {
+      "version": "16.5"
+    }
+  },
   "rules": {
     "no-console": [2, {"allow": ["warn", "error"]}],
     "indent": [2, 2],
@@ -29,10 +36,11 @@
     "quotes": [2, "single"],
     "semi": [2, "never"],
     "no-extra-semi": 2,
+    "space-before-function-paren": ["error", "never"],
     "react/jsx-no-literals": 2,
+    "react/jsx-no-undef": [2, { "allowGlobals": true }],
     "promise/always-return": 2,
     "promise/no-return-wrap": 2,
-    "promise/param-names": 2,
-    "promise/catch-or-return": 2
+    "promise/param-names": 2
   }
 }

@@ -1,0 +1,3 @@
+.search {
+  composes: formElements from '../Filters/styles.css';
+}

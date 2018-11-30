@@ -4,25 +4,24 @@
   color: #ffffff;
 }
 
-.header h1 {
+.text {
   margin: 0;
   padding: 20px;
+
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 50px;
 }
 
-
 @media (max-width: 980px) {
-  .header h1 {
+  .text {
     font-size: 26px;
   }
 }
 
 @media (max-width: 500px) {
-  .header h1 {
+  .text {
     font-size: 18px;
   }
 }
-

@@ -1,0 +1,53 @@
+.tag {
+  margin: 4px;
+  padding: 6px 0;
+
+  background-color: rgba(27,31,35,0.05);
+  color: #616161;
+
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.tag::before,
+.tag::after {
+  content: '\00a0\00a0';
+}
+
+.small {
+  font-size: 12px;
+}
+
+.big {
+  font-size: 21px;
+}
+
+.success {
+  background-color: #2E7D32;
+  color: #FFFFFF;
+}
+
+.warning {
+  background-color: #B71C1C;
+  color: #FFFFFF;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover,
+.active {
+  background: #AAAAAA;
+  color: #FFFFFF;
+}
+
+.success.clickable:hover,
+.success.active {
+  background: #276B2B;
+}
+
+.warning.clickable:hover,
+.warning.active {
+  background: #9A1515;
+}
